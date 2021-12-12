@@ -24,7 +24,7 @@ packages.
 ### Build From Source
 
 Alternatively you can also build `obs-cli` from source. Make sure you have a
-working Go environment (Go 1.11 or higher is required). See the
+working Go environment (Go 1.12 or higher is required). See the
 [install instructions](https://golang.org/doc/install.html).
 
 To install obs-cli, simply run:
@@ -231,4 +231,12 @@ Display virtual camera status:
 
 ```
 obs-cli virtualcam status
+```
+
+## Development
+
+You can regenerate the man pages with:
+
+```
+go run -tags man . man ./man
 ```

@@ -11,10 +11,11 @@ import (
 
 var (
 	profileCmd = &cobra.Command{
-		Use:   "profile",
-		Short: "manage profiles",
-		Long:  `The profile command manages profiles`,
-		RunE:  nil,
+		Use:              "profile",
+		Short:            "manage profiles",
+		Long:             `The profile command manages profiles`,
+		RunE:             nil,
+		PersistentPreRun: connectOBSCommand,
 	}
 
 	listProfileCmd = &cobra.Command{

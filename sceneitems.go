@@ -11,10 +11,11 @@ import (
 
 var (
 	sceneItemCmd = &cobra.Command{
-		Use:   "sceneitem",
-		Short: "manage scene items",
-		Long:  `The sceneitem command manages a scene's items`,
-		RunE:  nil,
+		Use:              "sceneitem",
+		Short:            "manage scene items",
+		Long:             `The sceneitem command manages a scene's items`,
+		RunE:             nil,
+		PersistentPreRun: connectOBSCommand,
 	}
 
 	listSceneItemsCmd = &cobra.Command{

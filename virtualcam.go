@@ -9,10 +9,11 @@ import (
 
 var (
 	virtualCamCmd = &cobra.Command{
-		Use:   "virtualcam",
-		Short: "manage virtual camera",
-		Long:  `The virtualcam command manages the virtual camera`,
-		RunE:  nil,
+		Use:              "virtualcam",
+		Short:            "manage virtual camera",
+		Long:             `The virtualcam command manages the virtual camera`,
+		RunE:             nil,
+		PersistentPreRun: connectOBSCommand,
 	}
 
 	startStopVirtualCamCmd = &cobra.Command{

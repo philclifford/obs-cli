@@ -11,10 +11,11 @@ import (
 
 var (
 	recordingCmd = &cobra.Command{
-		Use:   "recording",
-		Short: "manage recordings",
-		Long:  `The recording command manages recordings`,
-		RunE:  nil,
+		Use:              "recording",
+		Short:            "manage recordings",
+		Long:             `The recording command manages recordings`,
+		RunE:             nil,
+		PersistentPreRun: connectOBSCommand,
 	}
 
 	startStopRecordingCmd = &cobra.Command{

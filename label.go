@@ -9,10 +9,11 @@ import (
 
 var (
 	labelCmd = &cobra.Command{
-		Use:   "label",
-		Short: "manage text labels",
-		Long:  `The label command manages text labels`,
-		RunE:  nil,
+		Use:              "label",
+		Short:            "manage text labels",
+		Long:             `The label command manages text labels`,
+		RunE:             nil,
+		PersistentPreRun: connectOBSCommand,
 	}
 
 	textCmd = &cobra.Command{
