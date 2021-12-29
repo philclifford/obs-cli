@@ -111,7 +111,7 @@ func setSceneItemVisible(visible bool, scene string, items ...string) error {
 			Position:  resp.Position,
 			Rotation:  resp.Rotation,
 			Scale:     resp.Scale,
-			Locked:    resp.Locked,
+			Locked:    &resp.Locked,
 			Visible:   &visible,
 		}
 
@@ -135,7 +135,7 @@ func toggleSceneItem(scene string, items ...string) error {
 			return err
 		}
 
-		err = setSceneItemVisible(!*resp.Visible, scene, item)
+		err = setSceneItemVisible(!resp.Visible, scene, item)
 		if err != nil {
 			return err
 		}
@@ -170,8 +170,8 @@ func centerSceneItem(scene string, items ...string) error {
 			Position:  pos,
 			Rotation:  resp.Rotation,
 			Scale:     resp.Scale,
-			Locked:    resp.Locked,
-			Visible:   resp.Visible,
+			Locked:    &resp.Locked,
+			Visible:   &resp.Visible,
 		}
 
 		_, err = client.SceneItems.SetSceneItemProperties(&r)
